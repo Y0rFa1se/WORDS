@@ -14,9 +14,3 @@ function showNext() {
 function showMeaning() {
   document.getElementById("mean").innerHTML = kor[ran];
 }
-
-function showPrev() {
-  ran = prev;
-  document.getElementById("word").innerHTML = eng[ran];
-  document.getElementById("mean").innerHTML = "?";
-}
