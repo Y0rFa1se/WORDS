@@ -1,8 +1,9 @@
 def newkor():
-    num = int(input("lines : "))
-
     with open("words/ENG.ini", "r", encoding="UTF-8") as f:
         cont = f.readlines()
+        with open("words/KOR.ini", "r", encoding="UTF-8") as kr:
+            cnt = len(kr.readlines())
+        num = int(input("lines(current = ~" + str(cnt) + ") : "))
         cont = cont[(num - 1):]
         with open("words/KOR.ini", "a", encoding="UTF-8") as ka:
             for i in cont:
