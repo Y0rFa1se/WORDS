@@ -40,8 +40,8 @@ def edit():
         with open("words/trans/trans_KOR.ini", "r", encoding = "UTF-8") as tk:
             ko = tk.read()
             jscon[1] = ("var kor = [" + ko + "];\n")
-        with open("words/KOR.ini", "r", encoding = "UTF-8") as k:
-            lk = len(k.readlines())
+        with open("words/ENG.ini", "r", encoding = "UTF-8") as e:
+            lk = len(e.readlines())
         jscon[2] = "var max = " + str(lk) + ";\n"
     with open("jav.js", "w", encoding = "UTF-8") as js:
         for i in jscon:
@@ -53,6 +53,8 @@ while True:
         print("newkor(한국어 입력), edit(자바스크립트 수정)")
     elif (cmd == "newkor"):
         newkor()
+        trans()
+        edit()
     elif (cmd == "edit"):
         trans()
         edit()
